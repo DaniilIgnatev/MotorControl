@@ -12,17 +12,18 @@ w_hz_ts_out = simData{2};
 
 % PLOT
 close("all");
+figure;
 
 % Plot the current speed
 yyaxis left;
-plot(w_hz_ts_out.Values, 'b--');
+plot(w_hz_ts_out.Values);
 ylabel('Speed, Hz');
 ylim([0 120]);
 hold on;
 
 % Plot the required voltage
 yyaxis right;
-plot(v_ts_out.Values, 'r--');
+plot(v_ts_out.Values);
 ylabel('Voltage, V');
 ylim([0 5]);
 hold off;
