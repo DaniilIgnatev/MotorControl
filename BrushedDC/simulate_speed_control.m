@@ -1,11 +1,8 @@
-% Open Simulink model
-open_system('BrushedDC');
-
-% Set model parameters
-set_param('BrushedDC', 'Solver', 'ode45', 'StopTime', '10');
+system_name = 'SpeedControl.slx';
+open_system(system_name);
 
 % Run simulation and retrieve output
-simOut = sim("BrushedDC");
+simOut = sim(system_name);
 
 % Access results
 simData = simOut.get('yout');
@@ -36,4 +33,4 @@ title('Speed control');
 legend('Achieved speed', 'Output Voltage');
 grid on;
 
-save("data\simulate", "v_ts_out");
+save("data/output/simulate_speed_control", "v_ts_out");
